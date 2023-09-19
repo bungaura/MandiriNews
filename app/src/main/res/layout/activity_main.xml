@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:backgroundTint="@color/background_color"
+    tools:context=".ui.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="vertical"
+        android:id="@+id/ll_main">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/circular_image">
+
+            <include
+                layout="@layout/circular_image"
+                android:id="@+id/iv_logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_mandiri_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Mandiri News"
+                android:textSize="30sp"
+                android:textColor="@color/biru_mandiri"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_headline_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:text="Berita Terkini"
+            android:textSize="24sp"
+            android:textColor="@color/biru_mandiri"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_headline_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/headline_news" />
+
+        <TextView
+            android:id="@+id/tv_all_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingLeft="10dp"
+            android:text="Semua Berita"
+            android:textSize="20sp"
+            android:textColor="@color/biru_mandiri"
+            android:textStyle="bold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_all_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_news"/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

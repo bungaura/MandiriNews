@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.NewsApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimaryVariant">@color/biru_mandiri</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/kuning_mandiri</item>
+        <item name="colorSecondaryVariant">@color/kuning_mandiri</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="appBarLayoutStyle">@color/biru_mandiri</item>
+    </style>
+</resources>
