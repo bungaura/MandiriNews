@@ -23,3 +23,5 @@ interface NewsApiInterface {
         @Query("apiKey") apiKey: String = API_KEY
     ): Call<NewsResponse>
 }
+
+

@@ -19,7 +19,7 @@ import java.util.*
 class NewsAdapter(
     private val context: Context,
     private val news: ArrayList<Article>,
-    private val itemLayoutResourceId: Int // The XML layout resource ID for each item
+    private val itemLayoutResourceId: Int
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
@@ -42,20 +42,24 @@ class NewsAdapter(
     override fun getItemCount() = news.size
 
     inner class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
-        val tvAuthor: TextView = itemView.findViewById(R.id.tv_author)
-        val tvDate: TextView = itemView.findViewById(R.id.tv_date)
-        val ivImage: ImageView = itemView.findViewById(R.id.iv_image)
+        private val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
+        private val tvAuthor: TextView = itemView.findViewById(R.id.tv_author)
+        private val tvDate: TextView = itemView.findViewById(R.id.tv_date)
+        private val ivImage: ImageView = itemView.findViewById(R.id.iv_image)
 
         fun bind(article: Article) {
             tvTitle.text = article.title
             tvAuthor.text = article.author ?: "Anonymous"
             tvDate.text = formatDate(article.publishedAt)
-            Picasso.get()
-                .load(article.urlToImage)
-                .error(R.drawable.ic_no_picture)
-                .into(ivImage)
 
+            if(article.urlToImage == "null" || article.urlToImage == null){
+                ivImage.setImageResource(R.drawable.ic_no_picture)
+            } else {
+                Picasso.get()
+                    .load(article.urlToImage)
+                    .error(R.drawable.ic_no_picture)
+                    .into(ivImage)
+            }
         }
 
         private fun formatDate(dateString: String?): String {

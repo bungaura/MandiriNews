@@ -5,3 +5,4 @@ class NewsResponse (
     var totalResults: Int,
     var articles: List<Article>?
 )
+
