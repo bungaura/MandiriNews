@@ -1,5 +1,7 @@
 # MandiriNewsApp
 
+![MandiriNewsAppPreview](https://github.com/bungaura/MandiriNews/assets/88443222/78f67818-2624-4e87-9be2-ffc40e0f2975)
+
 MandiriNewsApp is an Android application that retrieves and displays a list of news from the NewsAPI.org API in two categories:
 1. Headline News, and 
 2. All News
